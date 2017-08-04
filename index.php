@@ -1,7 +1,7 @@
 <?php
-$conn = mysqli_connect("localhost","root","");
+$conn = mysqli_connect("localhost","root","jjmm0312");
 mysqli_select_db($conn,"mango");
-$result = mysqli_query($conn, "SELECT * FROM topic");
+$result = mysqli_query($conn, "SELECT * FROM device");
 
  ?>
 
@@ -20,13 +20,13 @@ $result = mysqli_query($conn, "SELECT * FROM topic");
     <nav>
       <ul>
         <?php
-          <li><a href="http://localhost/index.php?id=1">등록</a></li>
-          <li>내 장치</li>
+          echo '<li><a href="http://localhost/stone/index.php?id=1">등록</a></li>';
+          echo '<li>내 장치</li>';
           while($row=mysqli_fetch_assoc($result))
           {
-            echo '<li><a href="http://localhost/index.php?num='.$row['num'].'>"'.$row['name'].'</a></li>';
+            echo '<li><a href="http://localhost/stone/index.php?num='.$row['num'].'">'.$row['name'].'</a></li>';
           }
-          <li><a href="http://localhost/index.php?id=2">설정</a></li>
+          echo '<li><a href="http://localhost/stone/index.php?id=2">설정</a></li>';
         ?>
       </ul>
     </nav>
@@ -35,29 +35,33 @@ $result = mysqli_query($conn, "SELECT * FROM topic");
 
     <article>
       <?php
-      if($_GET['id']=='1'))
+      if(empty($_GET['id'])==false)
       {
-        //등록 메뉴
-      }
+        if($_GET['id']==1)
+        {
+          echo '등록';//등록 메뉴
+        }
 
-      else if($_GET['id']=='2')
-      {
-        //설정 메뉴
+        else if($_GET['id']==2)
+        {
+          echo '설정';//설정 메뉴
+        }
       }
 
       else
       {
         //기본화면 : 설명글 넣을 예정
+        echo 'hello';
       }
 
-      if(empty($_GET['num']===false))
+      if(empty($_GET['num'])===false)
       {
-        $sql='SELECT * FROM topic WHERE id='.$_GET['id'];
+        $sql='SELECT * FROM device WHERE id='.$_GET['id'];
 	      $result=mysqli_query($conn,$sql);
 	      $row=mysqli_fetch_assoc($result);
         echo '<h2>'.$row['name'].'</h2>';
-        echo '<a href="http://localhost/process.php?state=on"><input type="button" value="on"></a>';
-        echo '<a href="http://localhost/process.php?state=off"><input type="button" value="off"></a>';
+        echo '<a href="http://localhost/stone/process.php?state=on"><input type="button" value="on"></a>';
+        echo '<a href="http://localhost/stone/process.php?state=off"><input type="button" value="off"></a>';
       }
        ?>
     </article>
