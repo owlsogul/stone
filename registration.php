@@ -50,7 +50,7 @@
 
          <p>기기이름 : <input type="text" name="name" value=""></p>
          <p>기기정보 : <input type="text" name="signal" value=""></p>
-         <input type="submit" name="submit" value="">
+         <input type="submit" name="submit">
        </form>
      </article>
    </body>
