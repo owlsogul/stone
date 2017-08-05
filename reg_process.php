@@ -1,6 +1,6 @@
 <?php
 
-$conn=mysqli_connect("mango.vos.io","root","mango");
+$conn=mysqli_connect("localhost","root","mango");
 mysqli_select_db($conn,"mango");
 
 
