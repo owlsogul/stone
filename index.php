@@ -1,5 +1,5 @@
 <?php
-$conn = mysqli_connect("localhost","root","jjmm0312");
+$conn = mysqli_connect("localhost","root","mango");
 mysqli_select_db($conn,"mango");
 $result = mysqli_query($conn, "SELECT * FROM device");
 
