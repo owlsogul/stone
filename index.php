@@ -8,7 +8,7 @@ $result = mysqli_query($conn, "SELECT * FROM device");
 <html>
   <head>
     <meta charset="utf-8">
-    <link rel="stylesheet" type="text/css" href="http://mango.vos.io:81/style.css">
+    <link rel="stylesheet" type="text/css" href="style.css">
 
   </head>
   <body>
@@ -19,13 +19,13 @@ $result = mysqli_query($conn, "SELECT * FROM device");
     <nav>
       <ul>
         <?php
-          echo '<li><a href="http://mango.vos.io:81/index.php?setting=1">등록</a></li>';
+          echo '<li><a href="index.php?setting=1">등록</a></li>';
           echo '<li>내 장치</li>';
           while($row=mysqli_fetch_assoc($result))
           {
-            echo '<li><a href="http://mango.vos.io:81/index.php?num='.$row['num'].'">'.$row['name'].'</a></li>';
+            echo '<li><a href="index.php?id='.$row['id'].'">'.$row['name'].'</a></li>';
           }
-          echo '<li><a href="http://mango.vos.io:81/setting.php">설정</a></li>';
+          echo '<li><a href="setting.php">설정</a></li>';
         ?>
       </ul>
     </nav>
@@ -34,14 +34,14 @@ $result = mysqli_query($conn, "SELECT * FROM device");
 
     <article>
       <?php
-      if(empty($_GET['num'])===false)
+      if(empty($_GET['id'])===false)
       {
-        $sql='SELECT * FROM device WHERE num='.$_GET['num'];
+        $sql='SELECT * FROM device WHERE id='.$_GET['id'];
 	      $result=mysqli_query($conn,$sql);
 	      $row=mysqli_fetch_assoc($result);
         echo '<h2>'.$row['name'].'</h2>';
-        echo '<a href="http://mango.vos.io:81/process.php?state=on"><input type="button" value="on"></a>';
-        echo '<a href="http://mango.vos.io:81/process.php?state=off"><input type="button" value="off"></a>';
+        echo '<a href="process.php?state=on"><input type="button" value="on"></a>';
+        echo '<a href="process.php?state=off"><input type="button" value="off"></a>';
       }
 
       if(empty($_GET['setting'])===false){	
