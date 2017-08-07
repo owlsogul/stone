@@ -19,7 +19,7 @@ $result = mysqli_query($conn, "SELECT * FROM device");
     <nav>
       <ul>
         <?php
-          echo '<li><a href="index.php?setting=1">등록</a></li>';
+          echo '<li><a href="index.php?setting=1">기기관리</a></li>';
           echo '<li>내 장치</li>';
           while($row=mysqli_fetch_assoc($result))
           {
@@ -36,24 +36,31 @@ $result = mysqli_query($conn, "SELECT * FROM device");
       <?php
       if(empty($_GET['id'])===false)
       {
-        $sql='SELECT * FROM device WHERE id='.$_GET['id'];
-	      $result=mysqli_query($conn,$sql);
-	      $row=mysqli_fetch_assoc($result);
-        echo '<h2>'.$row['name'].'</h2>';
+        $sql='select * from device where id='.$_get['id'];
+	    $result=mysqli_query($conn,$sql);
+	    $row=mysqli_fetch_assoc($result);
+        
+		echo '<h2>'.$row['name'].'</h2>';
         echo '<a href="process.php?state=on"><input type="button" value="on"></a>';
         echo '<a href="process.php?state=off"><input type="button" value="off"></a>';
       }
 
       if(empty($_GET['setting'])===false){	
-       	echo '<form class="" action="reg_process.php" method="post">';
-        echo  '<p>기기이름 : <input type="text" name="name" value=""></p>';
-        echo  '<p>기기정보 : <input type="text" name="signal" value=""></p>';
-        echo  '<input type="submit" name="submit">';
-        echo '</form>';
-      }
+		$sql='SELECT * FROM device';
+		$result=mysqli_query($conn,$sql);
+      	while($row=mysqli_fetch_assoc($result))
+          {
+        	echo '<form class="" action="reg_process.php" method="post">';
+        	echo  'id : '.$row['id'].', ';
+			echo  ' 기기이름 : <input type="text" name="name" value="'.$row['name'].'">';
+       		echo  ' 정보 : <input type="text" name="description" value="'.$row['description'].'">';
+        	echo  ' 상태 : '.$row['status'].' ';
+			echo  '<input type="submit" name="submit" value="제출">';
+        	echo '</form>';
+          }
+		}
 
        ?>
-     </nav>
     </article>
   </body>
 </html>
