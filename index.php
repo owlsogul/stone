@@ -13,13 +13,13 @@ $result = mysqli_query($conn, "SELECT * FROM device");
   </head>
   <body>
     <header>
-      <h1>Mango block</h1>
+      <h1><a href = "/">Mango block</a></h1>
     </header>
 
     <nav>
       <ul>
         <?php
-          echo '<li><a href="index.php?setting=1">기기관리</a></li>';
+          echo '<li><a href="index.php?setting=true">기기관리</a></li>';
           echo '<li>내 장치</li>';
           while($row=mysqli_fetch_assoc($result))
           {
@@ -36,7 +36,7 @@ $result = mysqli_query($conn, "SELECT * FROM device");
       <?php
       if(empty($_GET['id'])===false)
       {
-        $sql='select * from device where id='.$_get['id'];
+        $sql='select * from device where id='.$_GET['id'];
 	    $result=mysqli_query($conn,$sql);
 	    $row=mysqli_fetch_assoc($result);
         
@@ -48,16 +48,28 @@ $result = mysqli_query($conn, "SELECT * FROM device");
       if(empty($_GET['setting'])===false){	
 		$sql='SELECT * FROM device';
 		$result=mysqli_query($conn,$sql);
-      	while($row=mysqli_fetch_assoc($result))
+        // echo '<input type="submit" name ="bringDeviceSignal" value="신호가져오기"/>';
+		// 현재 기기출력 및 수정
+		while($row=mysqli_fetch_assoc($result))
           {
-        	echo '<form class="" action="reg_process.php" method="post">';
-        	echo  'id : '.$row['id'].', ';
-			echo  ' 기기이름 : <input type="text" name="name" value="'.$row['name'].'">';
-       		echo  ' 정보 : <input type="text" name="description" value="'.$row['description'].'">';
-        	echo  ' 상태 : '.$row['status'].' ';
-			echo  '<input type="submit" name="submit" value="제출">';
+        	echo '<form class="" action="update_process.php" method="post">';
+        	echo  '기기id : '.$row['id'].', ';
+			echo  '기기이름 : <input type="text" name="name" value="'.$row['name'].'">';
+       		echo  '정보 : <input type="text" name="description" value="'.$row['description'].'">';
+        	echo  '상태 : ';
+			echo   $row['status']==1 ? 'On' : 'Off';
+			echo  '추가시간 : '.$row['created'];
+			echo  '<input type="submit" name="submit" value="변경">';
         	echo '</form>';
           }
+
+		//기기 추가
+		echo '<form class="" action="reg_process.php" method="post">';
+        echo  '<h2>기기추가</h2>';
+		echo  '기기이름 : <input type="text" name="name" value="'.$row['name'].'">';
+       	echo  '정보 : <input type="text" name="description" value="'.$row['description'].'">';
+		echo  '<input type="submit" name="submit" value="추가">';
+        echo '</form>';
 		}
 
        ?>
