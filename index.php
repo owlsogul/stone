@@ -48,7 +48,7 @@ $result = mysqli_query($conn, "SELECT * FROM device");
       if(empty($_GET['setting'])===false){ // 기기 관리 페이지를 눌렀을 때
     		$sql='SELECT * FROM device';
     		$result=mysqli_query($conn,$sql);
-        echo '<input type="submit" action="bring_device_signal.php" name ="bringDeviceSignal" value="신호가져오기"/>';
+        echo '<form action="bring_device_signal.php" method="post"><input type="submit" name ="bringDeviceSignal" value="신호가져오기"/></form>';
     		// 현재 기기출력 및 수정
         while($row=mysqli_fetch_assoc($result)){
           echo '<form id="device_manage_info" class="" action="update_process.php" method="post">';

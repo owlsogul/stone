@@ -29,6 +29,9 @@ article {
 #device_manage_info{
   border: 1px solid gray;
   padding: 10px;
-  margin: 10px;
+  margin-bottom: 10px;
+}
 
+#device_manage_info:first-of-type{
+  margin-top: 20px;
 }
