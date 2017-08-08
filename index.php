@@ -9,9 +9,10 @@ $result = mysqli_query($conn, "SELECT * FROM device");
   <head>
     <meta charset="utf-8">
     <link rel="stylesheet" type="text/css" href="style.css">
-
+    <title>Mango Block</title>
   </head>
   <body>
+
     <header>
       <h1><a href = "/">Mango block</a></h1>
     </header>
