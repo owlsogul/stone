@@ -25,8 +25,6 @@ $result = mysqli_query($conn, "SELECT * FROM device");
         <li><a href="index.php?page=mydevice">내 장치</a></li>
         <li><a href="index.php?page=setting">설정</a></li>
 
-
-
         <!--
           // 이제부터 사용하지 않을 예정.
           // while($row=mysqli_fetch_assoc($result))
@@ -53,12 +51,11 @@ $result = mysqli_query($conn, "SELECT * FROM device");
           echo '<a href="process.php?state=off"><input type="button" value="off"></a>';
         }
 
-
     if (empty($_GET['page']) == false){
       include 'page/'.$_GET['page'].'.php';
     }
     else {
-
+      
     }
 
 
