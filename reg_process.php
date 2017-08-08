@@ -10,4 +10,4 @@ $sql="INSERT INTO device (name, signal)VALUES('".$_POST['name']."','".$_POST['si
 
 $result = mysqli_query($conn, $sql);
 //header('Location: http://mango.vos.io:81/index.php');
-  ?>
+?>

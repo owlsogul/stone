@@ -1,4 +1,5 @@
 <?php
+
 $sql='SELECT * FROM device';
 $result=mysqli_query($conn,$sql);
 echo '<form id="device_manage_signal_form" action="bring_device_signal.php" method="post">';
@@ -34,4 +35,5 @@ echo  '기기이름 : <input type="text" name="name" value="'.$row['name'].'">';
 echo  '정보 : <input type="text" name="description" value="'.$row['description'].'">';
 echo  '<input type="submit" name="submit" value="추가">';
 echo '</form>';
- ?>
+
+?>
