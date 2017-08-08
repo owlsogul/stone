@@ -51,14 +51,14 @@ $result = mysqli_query($conn, "SELECT * FROM device");
         // echo '<input type="submit" name ="bringDeviceSignal" value="신호가져오기"/>';
 		// 현재 기기출력 및 수정
     while($row=mysqli_fetch_assoc($result)){
-      echo '<form class="" action="update_process.php" method="post">';
-      echo  '기기id : '.$row['id'].'<br>';
-      echo  '기기이름 : <input type="text" name="name" value="'.$row['name'].'">';
-      echo  '정보 : <input type="text" name="description" value="'.$row['description'].'">';
-      echo  '상태 : ';
+      echo '<form id="device_manage_info" class="" action="update_process.php" method="post">';
+      echo  '기기id   : '.$row['id'].'<br>';
+      echo  '기기이름 : <input type="text" name="name" value="'.$row['name'].'"><br>';
+      echo  '기기정보 : <input type="text" name="description" value="'.$row['description'].'"><br>';
+      echo  '기기상태 : ';
       echo   $row['status']==1 ? 'On' : 'Off';
-      echo  '추가시간 : '.$row['created'];
-      echo  '<input type="submit" name="submit" value="변경">';
+      echo  '<br>추가시간 : '.$row['created'];
+      echo  '<br><input type="submit" name="submit" value="변경">';
       echo '</form>';
     }
 

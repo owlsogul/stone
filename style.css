@@ -25,3 +25,10 @@ nav ul li:first-child {
 article {
   padding: 10px;
 }
+
+#device_manage_info{
+  border: 1px solid gray;
+  padding: 10px;
+  margin: 10px;
+
+}
