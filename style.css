@@ -7,18 +7,19 @@ nav {
   border-bottom: 1px gray solid;
 }
 
-nav ul {
-  padding-top: 10px;
+#menubar a{
+  color: black;
+  text-decoration: none;
 }
 
-nav ul li{
+#menubar li{
   display: inline;
-  border-left: 1px solid #999
+  border-left: 1px solid #999;
   font:bold 12px Dotum;
   padding: 0 10px;
 }
 
-nav ul li:first-child {
+#menubar li:first-child {
   border-left: none;
 }
 

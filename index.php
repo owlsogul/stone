@@ -17,7 +17,7 @@ $result = mysqli_query($conn, "SELECT * FROM device");
     </header>
 
     <nav>
-      <ul>
+      <ul id="menubar">
         <?php
           echo '<li><a href="index.php?setting=true">기기관리</a></li>';
           echo '<li>내 장치</li>';
