@@ -3,8 +3,8 @@
 $conn=mysqli_connect("localhost","root","mango");
 mysqli_select_db($conn,"mango");
 
-$sql = "INSERT INTO `mango`.`device` (`id`, `name`, `description`, `created`, `status`) VALUES (NULL,'".$_POST['name']."','".$_POST['description']."',now(), NULL);";
-
+$sql = "UPDATE `mango`.`device` SET `name` = '".$_POST['name']."', `description` = '".$_POST['description']."' WHERE `device`.`id` =".$_POST['id'].";";
+	
 $result = mysqli_query($conn, $sql);
 header('Location: http://mango.vos.io:81');
 ?>
