@@ -22,10 +22,11 @@ $result = mysqli_query($conn, "SELECT * FROM device");
         <?php
           echo '<li><a href="index.php?setting=true">기기관리</a></li>';
           echo '<li>내 장치</li>';
-          while($row=mysqli_fetch_assoc($result))
-          {
-            echo '<li><a href="index.php?id='.$row['id'].'">'.$row['name'].'</a></li>';
-          }
+          // 이제부터 사용하지 않을 예정.
+          // while($row=mysqli_fetch_assoc($result))
+          // {
+          //   echo '<li><a href="index.php?id='.$row['id'].'">'.$row['name'].'</a></li>';
+          // }
           echo '<li><a href="setting.php">설정</a></li>';
         ?>
       </ul>
