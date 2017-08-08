@@ -51,12 +51,11 @@ $result = mysqli_query($conn, "SELECT * FROM device");
           echo '<a href="process.php?state=off"><input type="button" value="off"></a>';
         }
 
-
     if (empty($_GET['page']) == false){
       include 'page/'.$_GET['page'].'.php';
     }
     else {
-
+      
     }
 
 
