@@ -7,6 +7,10 @@ nav {
   border-bottom: 1px gray solid;
 }
 
+article {
+  padding: 10px;
+}
+
 #menubar a{
   color: black;
   text-decoration: none;
@@ -23,10 +27,6 @@ nav {
   border-left: none;
 }
 
-article {
-  padding: 10px;
-}
-
 #device_manage_info{
   border: 1px solid gray;
   padding: 10px;
@@ -35,13 +35,4 @@ article {
 
 #device_manage_signal_form{
   margin-bottom: 10px;
-  border-right: 1px gray solid;
-  padding: 10px;
-  height: 600px;
-  float: left;
-}
-
-article {
-  padding: 10px;
-  float: left;
 }
