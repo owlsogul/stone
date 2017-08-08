@@ -35,4 +35,13 @@ article {
 
 #device_manage_signal_form{
   margin-bottom: 10px;
+  border-right: 1px gray solid;
+  padding: 10px;
+  height: 600px;
+  float: left;
+}
+
+article {
+  padding: 10px;
+  float: left;
 }
