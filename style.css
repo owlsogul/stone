@@ -4,13 +4,24 @@ header {
 }
 
 nav {
-  border-right: 1px gray solid;
-  padding: 10px;
-  height: 600px;
-  float: left;
+  border-bottom: 1px gray solid;
+}
+
+nav ul {
+  padding-top: 10px;
+}
+
+nav ul li{
+  display: inline;
+  border-left: 1px solid #999
+  font:bold 12px Dotum;
+  padding: 0 10px;
+}
+
+nav ul li:first-child {
+  border-left: none;
 }
 
 article {
   padding: 10px;
-  float: left;
 }
