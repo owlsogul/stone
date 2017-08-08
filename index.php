@@ -18,17 +18,24 @@ $result = mysqli_query($conn, "SELECT * FROM device");
     </header>
 
     <nav>
+
       <ul id="menubar">
-        <?php
-          echo '<li><a href="index.php?setting=true">기기관리</a></li>';
-          echo '<li>내 장치</li>';
+
+
+        <li><a href="index.php?page=manage">기기관리</a></li>
+        <li><a href="index.php?page=mydevice">내 장치</a></li>
+        <li><a href="index.php?page=setting">설정</a></li>
+
+
+
+        <!--
           // 이제부터 사용하지 않을 예정.
           // while($row=mysqli_fetch_assoc($result))
           // {
           //   echo '<li><a href="index.php?id='.$row['id'].'">'.$row['name'].'</a></li>';
           // }
-          echo '<li><a href="setting.php">설정</a></li>';
-        ?>
+        -->
+
       </ul>
     </nav>
 
@@ -47,7 +54,7 @@ $result = mysqli_query($conn, "SELECT * FROM device");
           echo '<a href="process.php?state=off"><input type="button" value="off"></a>';
         }
 
-      if(empty($_GET['setting'])===false){ // 기기 관리 페이지를 눌렀을 때
+      if($_GET['page']=='manage'){ // 기기 관리 페이지를 눌렀을 때
     		$sql='SELECT * FROM device';
     		$result=mysqli_query($conn,$sql);
         echo '<form id="device_manage_signal_form" action="bring_device_signal.php" method="post">';
