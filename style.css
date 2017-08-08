@@ -4,6 +4,37 @@ header {
 }
 
 nav {
+  border-bottom: 1px gray solid;
+}
+
+#menubar a{
+  color: black;
+  text-decoration: none;
+}
+
+#menubar li{
+  display: inline;
+  border-left: 1px solid #999;
+  font:bold 12px Dotum;
+  padding: 0 10px;
+}
+
+#menubar li:first-child {
+  border-left: none;
+}
+
+article {
+  padding: 10px;
+}
+
+#device_manage_info{
+  border: 1px solid gray;
+  padding: 10px;
+  margin-bottom: 10px;
+}
+
+#device_manage_signal_form{
+  margin-bottom: 10px;
   border-right: 1px gray solid;
   padding: 10px;
   height: 600px;
