@@ -51,7 +51,16 @@ $result = mysqli_query($conn, "SELECT * FROM device");
         echo '<form id="device_manage_signal_form" action="bring_device_signal.php" method="post">';
         echo '<input type="submit" name ="bringDeviceSignal" value="신호가져오기"/>';
         echo '</form>';
+
+
+        echo '<h2>연결된 기기 목록</h2>';
+
+        echo '<h4>새로운 기기 목록</h4>';
+        echo '로딩중...';
+
     		// 현재 기기출력 및 수정
+        // 이미 저장 되어 있는 기기일 경우
+        echo '<h4>저장된 기기 목록</h4>';
         while($row=mysqli_fetch_assoc($result)){
           echo '<form id="device_manage_info" class="" action="update_process.php" method="post">';
           echo  '기기id   : '.$row['id'].'<br>';
@@ -63,6 +72,7 @@ $result = mysqli_query($conn, "SELECT * FROM device");
           echo  '<br><input type="submit" name="submit" value="변경">';
           echo '</form>';
         }
+
 
   		//기기 추가
       echo '<form class="" action="reg_process.php" method="post">';
