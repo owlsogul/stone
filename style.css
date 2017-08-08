@@ -1,0 +1,16 @@
+header {
+  border-bottom: 1px gray solid;
+  padding: 40px;
+}
+
+nav {
+  border-right: 1px gray solid;
+  padding: 10px;
+  height: 600px;
+  float: left;
+}
+
+article {
+  padding: 10px;
+  float: left;
+}
