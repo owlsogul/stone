@@ -34,8 +34,8 @@ while($row=mysqli_fetch_assoc($result)){
 //추후에 주변에 있는 기기를 탐색해서 추가할 수 있는 방향으로
 echo '<form class="" action="reg_process.php" method="post">';
 echo  '<h2>기기추가</h2>';
-echo  '기기이름 : <input type="text" name="name" value="'.$row['name'].'">';
-echo  '정보 : <input type="text" name="description" value="'.$row['description'].'">';
+echo  '기기이름 : <input type="text" name="name" value="">';
+echo  '정보 : <input type="text" name="description" value="">';
 echo  '<input type="submit" name="submit" value="추가">';
 echo '</form>';
 ?>
