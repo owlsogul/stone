@@ -8,7 +8,7 @@ $result = mysqli_query($conn, "SELECT * FROM device");
 <html>
   <head>
     <meta charset="utf-8">
-    <link rel="stylesheet" type="text/css" href="style.css">
+    <link rel="stylesheet" type="text/css" href="css/style.css">
     <title>Mango Block</title>
   </head>
   <body>
